@@ -1,5 +1,5 @@
 <?php
-$products = ["iPhone","iPad","iMac"];
+$products = ["pull champion","pull nike","pull adidas"];
 
 // first element
 ////////////////////////////////////
