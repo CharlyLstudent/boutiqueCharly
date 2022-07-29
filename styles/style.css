@@ -1,0 +1,9 @@
+
+
+table, tr, td {
+    border: 1px solid black;
+}
+.products {
+    display: flex;
+    justify-content: space-around;
+}
