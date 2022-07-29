@@ -5,5 +5,7 @@ table, tr, td {
 }
 .products {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+   column-gap: 25%;
 }

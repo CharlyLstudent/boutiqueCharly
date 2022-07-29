@@ -20,6 +20,7 @@ $pull_nike = [
     "price" => 3500,
     "weight" => 100,
     "discount" => 10,
+
     "picture_url" => "/boutiqueCharly/assets/pull_nike.jpg",
 ];
 ?>
