@@ -13,7 +13,6 @@
 <?php
 require 'header.php';
 require 'item.php';
-require 'my-functions.php';
 //require 'catalog-with-keys.php';
 require 'multidimensional-catalog.php';
 require 'footer.php';

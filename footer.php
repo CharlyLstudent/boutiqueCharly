@@ -1,6 +1,4 @@
-<?php
-require 'my-functions.php';
-?>
+
 
 
 <footer class="main-footer">

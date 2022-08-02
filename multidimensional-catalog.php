@@ -1,5 +1,5 @@
 <?php
-require 'my-functions.php';
+require_once 'my-functions.php';
 ?>
 
 

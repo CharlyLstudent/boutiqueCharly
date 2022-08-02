@@ -1,6 +1,3 @@
-<?php
-require 'my-functions.php';
-?>
 
 
 <?php
