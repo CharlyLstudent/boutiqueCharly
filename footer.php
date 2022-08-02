@@ -1,3 +1,8 @@
+<?php
+require 'my-functions.php';
+?>
+
+
 <footer class="main-footer">
     <strong>Copyright © 2022 <a href="#">Charly Lecable</a>.</strong>
     All rights reserved.

@@ -1,4 +1,8 @@
 <?php
+require 'my-functions.php';
+?>
+
+<?php
 $pull_champion = [
     "name" => "pull champion",
     "price" => 2500,

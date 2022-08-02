@@ -1,4 +1,9 @@
 <?php
+require 'my-functions.php';
+?>
+
+
+<?php
 $products = [
     "brochettes" => [
         "name" => "Brochettes",

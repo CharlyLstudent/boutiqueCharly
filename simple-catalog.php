@@ -1,4 +1,9 @@
 <?php
+require 'my-functions.php';
+?>
+
+
+<?php
 $products = ["pull champion","pull nike","pull adidas"];
 
 // first element
