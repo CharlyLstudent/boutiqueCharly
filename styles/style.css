@@ -1,11 +1,1 @@
 
-
-table, tr, td {
-    border: 1px solid black;
-}
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-   column-gap: 25%;
-}

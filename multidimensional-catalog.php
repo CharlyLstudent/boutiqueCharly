@@ -26,106 +26,89 @@ $products = [
         "discount" => 10,
         "picture_url" => "/boutiqueCharly/assets/pokebowl.jpg",
     ],
-    "br" => [
-        "name" => "Brochettes",
-        "price" => 1000,
-        "weight" => 400,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/brochettes.jpg",
-    ],
-    "bu" => [
-        "name" => "Burger",
+    "pizza" => [
+        "name" => "Pizza",
         "price" => 1000,
         "weight" => 350,
         "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/burger.jpg",
+        "picture_url" => "/boutiqueCharly/assets/pizza.jpg",
     ],
-    "po" => [
-        "name" => "Pokebowl",
-        "price" => 1500,
+    "asperge" => [
+        "name" => "Asperge",
+        "price" => 3000,
+        "weight" => 350,
+        "discount" => 10,
+        "picture_url" => "/boutiqueCharly/assets/asperge.jpg",
+    ],
+    "poisson" => [
+        "name" => "Poisson",
+        "price" => 2500,
         "weight" => 100,
         "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/pokebowl.jpg",
+        "picture_url" => "/boutiqueCharly/assets/poisson.jpg",
     ],
+    "raviole" => [
+        "name" => "Raviole",
+        "price" => 2500,
+        "weight" => 100,
+        "discount" => 10,
+        "picture_url" => "/boutiqueCharly/assets/raviole.jpg",
+    ],
+    "ribs" => [
+        "name" => "Ribs",
+        "price" => 2500,
+        "weight" => 100,
+        "discount" => 10,
+        "picture_url" => "/boutiqueCharly/assets/ribs.jpg",
+    ],
+
+
 
 ];
 ?>
 
-<div class="products">
-
+<div class="d-flex flex-wrap justify-content-between col-md-9 gap-5">
     <?php foreach ($products as $product) { ?>
-        <table>
-            <div class="abricots">
-                <tr>
-                    <td class="cells"><img src="<?php echo $product["picture_url"] ?>" alt="menfou"></td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        <h3> <?php echo $product["name"] ?></h3>
-                        <p><?php echo formatPrice($product["price"]) ?> <?php echo $product["discount"] ?>%</p>
-                        <p><?php echo $product["weight"] ?>Gr</p>
-                    </td>
-                </tr>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<?php echo $product["picture_url"] ?>" alt="Card image">
+            <div class="card-body">
+                <h3> <?php echo $product["name"] ?></h3>
+                <p class="card-text"><?php echo formatPrice(priceExcludingVAT($product["price"])); ?> Prix HT</p>
+                <p class="card-text"><?php echo formatPrice($product["price"]) ?> Prix TTC </p>
+                <p class="card-text">Reduction <?php echo $product["discount"] ?>
+                    % <?php echo formatPrice(discountedPrice($product["discount"], $product["price"])); ?>
+                    Prix après réduction</p>
+                <p><?php echo $product["weight"] ?>Gr</p>
             </div>
-
-        </table>
+        </div>
     <?php } ?>
 </div>
-<?php
-?>
+
+
+<!--    <div class="products">-->
 <!---->
-<!--<div class="products">-->
-<!--    <div class="abricot">-->
-<!--        <table>-->
-<!--            <tr>-->
-<!--                <td class="cells"><img src='--><? //= $products["brochettes"]["picture_url"] ?><!--'-->
-<!--                                       alt='image du plat de brochettes'></td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td class="cells">-->
-<!--                    <h3> --><? //= $products["brochettes"]["name"] ?><!--</h3>-->
-<!--                    <p> Prix: --><? //= $products["brochettes"]["price"] . "€" ?>
-<!--                        Discount: --><? //= $products["brochettes"]["discount"] . "%" ?><!--</p>-->
-<!--                    <p>Délicieux plat de brochettes marinées</p>-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--        </table>-->
+<!--        --><?php //foreach ($products as $product) { ?>
+<!--            <table>-->
+<!--                <div class="abricots">-->
+<!--                    <tr>-->
+<!--                        <td class="cells"><img src="--><?php //echo $product["picture_url"] ?><!--" alt="menfou"></td>-->
+<!--                    </tr>-->
+<!---->
+<!---->
+<!--                    <tr>-->
+<!--                        <td>-->
+<!--                            <h3> --><?php //echo $product["name"] ?><!--</h3>-->
+<!--                            <p class="HT">--><?php //echo formatPrice(priceExcludingVAT($product["price"])); ?><!-- Prix HT</p>-->
+<!--                            <p class="TTC">--><?php //echo formatPrice($product["price"]) ?><!-- Prix TTC </p>-->
+<!--                            <p class="discount">Reduction --><?php //echo $product["discount"] ?>
+<!--                                % --><?php //echo formatPrice(discountedPrice($product["discount"], $product["price"])); ?>
+<!--                                Prix après réduction</p>-->
+<!--                            <p>--><?php //echo $product["weight"] ?><!--Gr</p>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                </div>-->
+<!---->
+<!--            </table>-->
+<!--        --><?php //} ?>
 <!--    </div>-->
-<!---->
-<!---->
-<!--    <div class="abricot">-->
-<!--        <table>-->
-<!--            <tr>-->
-<!--                <td class="cells"><img src='--><? //= $products["burger"]["picture_url"] ?><!--' alt='image du plat burger'></td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td class="cells">-->
-<!--                    <h3>--><? //= $products["burger"]["name"] ?><!--</h3>-->
-<!--                    <p> Prix: --><? //= $products["burger"]["price"] . "€" ?>
-<!--                        Discount: --><? //= $products["burger"]["discount"] . "%" ?><!--</p>-->
-<!--                    <p>Un burger qui fera plaisir aux plus gourmands</p>-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--        </table>-->
-<!--    </div>-->
-<!---->
-<!---->
-<!--    <div class="abricot">-->
-<!--        <table>-->
-<!--            <tr>-->
-<!--                <td class="cells"><img src='--><? //= $products["pokebowl"]["picture_url"] ?><!--' alt='image du plat pokebowl'>-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td class="cells">-->
-<!--                    <h3>--><? //= $products["pokebowl"]["name"] ?><!--</h3>-->
-<!--                    <p> Prix: --><? //= $products["pokebowl"]["price"] . "€" ?>
-<!--                        Discount: --><? //= $products["pokebowl"]["discount"] . "%" ?><!--</p>-->
-<!--                    <p>Un pokebowl aussi bon que coloré!</p>-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--        </table>-->
-<!--    </div>-->
-<!--</div>-->
+
