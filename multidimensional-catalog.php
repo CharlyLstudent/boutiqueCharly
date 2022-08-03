@@ -1,88 +1,57 @@
 <?php
 require_once 'my-functions.php';
+global $products;
+require 'arrayProduct.php';
 ?>
 
 
-<?php
-$products = [
-    "brochettes" => [
-        "name" => "Brochettes",
-        "price" => 1000,
-        "weight" => 400,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/brochettes.jpg",
-    ],
-    "burger" => [
-        "name" => "Burger",
-        "price" => 1000,
-        "weight" => 350,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/burger.jpg",
-    ],
-    "pokebowl" => [
-        "name" => "Pokebowl",
-        "price" => 1500,
-        "weight" => 100,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/pokebowl.jpg",
-    ],
-    "pizza" => [
-        "name" => "Pizza",
-        "price" => 1000,
-        "weight" => 350,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/pizza.jpg",
-    ],
-    "asperge" => [
-        "name" => "Asperge",
-        "price" => 3000,
-        "weight" => 350,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/asperge.jpg",
-    ],
-    "poisson" => [
-        "name" => "Poisson",
-        "price" => 2500,
-        "weight" => 100,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/poisson.jpg",
-    ],
-    "raviole" => [
-        "name" => "Raviole",
-        "price" => 2500,
-        "weight" => 100,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/raviole.jpg",
-    ],
-    "ribs" => [
-        "name" => "Ribs",
-        "price" => 2500,
-        "weight" => 100,
-        "discount" => 10,
-        "picture_url" => "/boutiqueCharly/assets/ribs.jpg",
-    ],
 
-
-
-];
-?>
-
-<div class="d-flex flex-wrap justify-content-between col-md-9 gap-5">
-    <?php foreach ($products as $product) { ?>
+<div class="principal d-flex flex-wrap justify-content-between col-md-9 gap-5">
+    <?php foreach ($products as $key => $product) { ?>
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="<?php echo $product["picture_url"] ?>" alt="Card image">
             <div class="card-body">
                 <h3> <?php echo $product["name"] ?></h3>
-                <p class="card-text"><?php echo formatPrice(priceExcludingVAT($product["price"])); ?> Prix HT</p>
-                <p class="card-text"><?php echo formatPrice($product["price"]) ?> Prix TTC </p>
+                <p class="card-text"><?php  formatPrice(priceExcludingVAT($product["price"])); ?> Prix HT</p>
+                <p class="card-text"><?php  formatPrice($product["price"]) ?> Prix TTC </p>
                 <p class="card-text">Reduction <?php echo $product["discount"] ?>
-                    % <?php echo formatPrice(discountedPrice($product["discount"], $product["price"])); ?>
+                    % <?php  formatPrice(discountedPrice($product["discount"], $product["price"])); ?>
                     Prix après réduction</p>
                 <p><?php echo $product["weight"] ?>Gr</p>
+                <form action="cart.php" method="post">
+                    <label for="quantity">Quantité: </label>
+                    <input type="number" name="quantity" min="1" max="5">
+                    <input type="hidden" name="result" value="<?= $key ?>" >
+                    <input type="submit" value="commander">
+                </form>
             </div>
         </div>
     <?php } ?>
 </div>
+
+
+<!--<div class="principal d-flex flex-wrap justify-content-between col-md-9 gap-5">-->
+<!--    --><?php //foreach ($products as $product) { ?>
+<!--        <div class="card" style="width: 18rem;">-->
+<!--            <img class="card-img-top" src="--><?php //echo $product["picture_url"] ?><!--" alt="Card image">-->
+<!--            <div class="card-body">-->
+<!--                <h3> --><?php //echo $product["name"] ?><!--</h3>-->
+<!--                <p class="card-text">--><?php //echo formatPrice(priceExcludingVAT($product["price"])); ?><!-- Prix HT</p>-->
+<!--                <p class="card-text">--><?php //echo formatPrice($product["price"]) ?><!-- Prix TTC </p>-->
+<!--                <p class="card-text">Reduction --><?php //echo $product["discount"] ?>
+<!--                    % --><?php //echo formatPrice(discountedPrice($product["discount"], $product["price"])); ?>
+<!--                    Prix après réduction</p>-->
+<!--                <p>--><?php //echo $product["weight"] ?><!--Gr</p>-->
+<!--                <form action="cart.php" method="post">-->
+<!--                    <label for="quantity">Quantité: </label>-->
+<!--                    <input type="number" name="quantity" min="1" max="5">-->
+<!--                    <input type="submit" value="commander">-->
+<!--                    <input type="hidden" name="">-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    --><?php //} ?>
+<!--</div>-->
 
 
 <!--    <div class="products">-->
