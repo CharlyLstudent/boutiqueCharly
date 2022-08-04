@@ -1,8 +1,18 @@
 <?php
 require 'arrayProduct.php';
 global $products;
-require_once 'my-functions.php'
+require_once 'my-functions.php';
+$key = $_POST["result"];
+$quantity = $_POST["quantity"];
+
+
+checkQuantity($quantity);
+
+keyInArray($key,$products);
+
+
 ?>
+
 
 <!doctype html>
 <html lang="fr">
@@ -18,16 +28,7 @@ require_once 'my-functions.php'
 </head>
 <body>
 
-<?php
-$key = $_POST["result"];
-$quantity = $_POST["quantity"];
-?>
-<?php
-//if(!filter_has_var(INPUT_POST, "quantity")){
-//    header("Location: http://localhost/boutiqueCharly/error.php");
-//    exit;
-//}else{
-//?>
+
 <div class="details">
     <div class="card" style="width: 18rem;">
         <div class="card-header d-flex justify-content-center font-weight-bold">
@@ -47,7 +48,6 @@ $quantity = $_POST["quantity"];
         </ul>
     </div>
 </div>
-<?php } ?>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
         crossorigin="anonymous"></script>

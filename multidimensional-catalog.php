@@ -3,9 +3,6 @@ require_once 'my-functions.php';
 global $products;
 require 'arrayProduct.php';
 ?>
-
-
-
 <div class="principal d-flex flex-wrap justify-content-between col-md-9 gap-5">
     <?php foreach ($products as $key => $product) { ?>
         <div class="card" style="width: 18rem;">

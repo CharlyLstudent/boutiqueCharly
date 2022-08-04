@@ -21,6 +21,22 @@ function discountedPrice($discount, $price): float
 
 }
 
+function checkQuantity($quantity): void{
+    if($quantity<1){
+        header("Location: http://localhost/boutiqueCharly/error.php");
+        exit;
+    }
+}
+
+function keyInArray ($key, $products): void
+{
+    if(!in_array($key, array_keys($products), true)){
+        header("Location: http://localhost/boutiqueCharly/error.php");
+        exit;
+    }
+}
+
+
 //////////////////////////////////////////////////////////////////////////
 // Formule de calcul prix HT                                            //
 // HT = (100 x TTC) / (100 + TVA)                                       //
