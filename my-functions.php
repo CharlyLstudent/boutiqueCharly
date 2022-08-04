@@ -36,6 +36,19 @@ function keyInArray ($key, $products): void
     }
 }
 
+function chooseTransport($transporter, $products, $key){
+
+    if($transporter == "laposte"){
+        if($products[$key]["weight"]<=500){
+
+        }elseif ($products[$key]["weight"]<=1999){
+
+        }elseif ($products[$key]["weight"]>=2000){
+
+        }
+    }
+}
+
 
 //////////////////////////////////////////////////////////////////////////
 // Formule de calcul prix HT                                            //
