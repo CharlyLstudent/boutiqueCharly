@@ -77,13 +77,29 @@ $transporter = [
         ],
         "big package" => [
             "poids max" => 2000,
+            "price" => null,
         ],
     ],
     "dhl" => [
         "name" => "DHL",
-        "small package" => 500,
-        "medium package" => 10,
-        "big package" => null,
-    ]
+        "small package" =>[
+            "poids min" => 0,
+            "poids max" => 500,
+            "price" => 1000,
+        ],
+        "medium package" => [
+            "poids min" => 500,
+            "poids max" => 1999,
+            "price" => 10,
+        ],
+        "big package" => [
+            "poids max" => 2000,
+            "price" => null,
+        ],
+    ],
+
 ];
+
 ?>
+
+

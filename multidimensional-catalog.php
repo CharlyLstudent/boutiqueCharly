@@ -19,6 +19,7 @@ require 'libraryArray.php';
                     <label for="quantity">Quantité: </label>
                     <input type="number" name="quantity" min="1" max="5">
                     <input type="hidden" name="result" value="<?= $key ?>" >
+                    <input type="hidden" name="delivery" value="0" >
                     <input type="submit" value="commander">
                 </form>
             </div>
